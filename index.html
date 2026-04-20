@@ -4,238 +4,131 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Om Prasad | Portfolio</title>
-  <meta
-    name="description"
-    content="Om Prasad Behera - AI-powered applications, scalable full-stack systems, Java, Spring Boot, MERN Stack"
-  />
-
+  <meta name="description" content="Om Prasad Behera - B.Tech CSE Student, Full Stack Developer, AI Enthusiast" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;700;800&display=swap"
     rel="stylesheet"
   />
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <div class="bg-grid"></div>
-  <div class="bg-orb orb-1"></div>
-  <div class="bg-orb orb-2"></div>
-  <div class="bg-orb orb-3"></div>
   <div class="cursor-dot"></div>
-  <div class="cursor-outline"></div>
+  <div class="cursor-ring"></div>
 
-  <!-- NAVBAR -->
+  <div class="bg-blur bg-blur-1"></div>
+  <div class="bg-blur bg-blur-2"></div>
+  <div class="bg-grid"></div>
+  <div class="particles" id="particles"></div>
+
   <header class="site-header">
     <nav class="navbar container">
-      <a href="#home" class="logo">OM<span>.</span></a>
+      <a href="index.html" class="logo">OM<span>.</span></a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-
-    <!-- HERO -->
-    <section id="home" class="hero container">
-      <div class="hero-left reveal">
-        <p class="eyebrow">AI • FULL STACK • SOFTWARE DEVELOPMENT</p>
+    <section class="hero container reveal">
+      <div class="hero-content">
+        <p class="eyebrow">B.Tech CSE • Full Stack Developer • AI Enthusiast</p>
         <h1>
-          Hello, I'm
-          <span class="gradient-text">Om Prasad Behera</span>
+          Hello, I'm <span class="gradient-text">Om Prasad Behera</span>
         </h1>
         <p class="hero-text">
-          I build AI-powered applications and scalable full-stack systems with a
-          strong focus on performance, clean architecture, and real-world usability.
+          B.Tech Computer Science student at KIIT University with strong foundations
+          in C++, Data Structures, DBMS, Operating Systems, and full-stack development.
+          Experienced in building AI-powered and scalable applications using MERN Stack
+          and Spring Boot. Seeking a Software Development Internship to apply
+          problem-solving skills in real-world projects.
         </p>
 
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="assets/resume.pdf" target="_blank" class="btn btn-secondary">Resume</a>
+        <div class="hero-actions">
+          <a href="projects.html" class="btn btn-primary magnetic">View Projects</a>
+          <a href="assets/resume.pdf" class="btn btn-secondary magnetic" target="_blank">View Resume</a>
         </div>
 
         <div class="hero-links">
           <a href="https://github.com/omprasad7711" target="_blank">GitHub</a>
           <a href="https://linkedin.com/in/omprasad7711" target="_blank">LinkedIn</a>
           <a href="mailto:omprasadbehera1@gmail.com">Email</a>
-          <a href="tel:+918117875610">Phone</a>
+          <a href="contact.html">Phone</a>
         </div>
       </div>
 
-      <div class="hero-right reveal">
-        <div class="hero-card tilt-card">
-          <div class="hero-badge top-badge">Available for Opportunities</div>
+      <div class="hero-visual">
+        <div class="profile-card tilt-card floating-card">
+          <div class="profile-ring"></div>
 
-          <div class="hero-card-inner">
-            <div class="terminal-bar">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+          <img src="assets/profile.jpg" alt="Om Prasad Behera" class="profile-image" />
 
-            <div class="hero-panel">
-              <p><span>&gt;</span> Java / Spring Boot</p>
-              <p><span>&gt;</span> MERN Stack</p>
-              <p><span>&gt;</span> AI Integrations</p>
-              <p><span>&gt;</span> REST APIs</p>
-              <p><span>&gt;</span> Problem Solving</p>
-            </div>
-          </div>
+          <div class="floating-badge badge-top">Open to Internship</div>
+          <div class="floating-badge badge-right">Full Stack + AI</div>
 
-          <div class="floating-chip chip-1">Spring Boot</div>
-          <div class="floating-chip chip-2">MERN</div>
-          <div class="floating-chip chip-3">AI Apps</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HIGHLIGHTS -->
-    <section class="stats container reveal">
-      <div class="stat-card tilt-card">
-        <h3>AI</h3>
-        <p>Projects using intelligent automation and API integration</p>
-      </div>
-
-      <div class="stat-card tilt-card">
-        <h3>Full Stack</h3>
-        <p>Backend, frontend, authentication, database workflows</p>
-      </div>
-
-      <div class="stat-card tilt-card">
-        <h3>Scalable</h3>
-        <p>Focused on clean systems and production-style architecture</p>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="section container reveal">
-      <div class="section-heading">
-        <p class="section-label">Portfolio Work</p>
-        <h2>Projects</h2>
-      </div>
-
-      <div class="project-grid">
-        <article class="project-card tilt-card">
-          <div class="project-top">
-            <span class="project-index">01</span>
-            <span class="project-tag">AI + Backend</span>
-          </div>
-          <h3>AI-Powered Code Review API</h3>
-          <p>
-            Built using Spring Boot and Google Gemini API to analyze code and
-            generate intelligent suggestions automatically.
-          </p>
-        </article>
-
-        <article class="project-card tilt-card">
-          <div class="project-top">
-            <span class="project-index">02</span>
-            <span class="project-tag">MERN Stack</span>
-          </div>
-          <h3>MERN Money Tracker</h3>
-          <p>
-            Full-stack application for tracking income and expenses with secure
-            authentication and real-time updates.
-          </p>
-        </article>
-
-        <article class="project-card tilt-card">
-          <div class="project-top">
-            <span class="project-index">03</span>
-            <span class="project-tag">Productivity App</span>
-          </div>
-          <h3>Task Management App</h3>
-          <p>
-            Productivity tool with JWT authentication and CRUD functionality
-            using Spring Boot and React.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section id="education" class="section container reveal">
-      <div class="section-heading">
-        <p class="section-label">Academic Background</p>
-        <h2>Education</h2>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-card tilt-card">
-          <div class="timeline-dot"></div>
-          <h3>B.Tech CSE – KIIT University</h3>
-          <p>2023 – 2027</p>
-        </div>
-
-        <div class="timeline-card tilt-card">
-          <div class="timeline-dot"></div>
-          <h3>CHSE – KIIT Higher Secondary</h3>
-          <p>Higher Secondary Education</p>
-        </div>
-
-        <div class="timeline-card tilt-card">
-          <div class="timeline-dot"></div>
-          <h3>ICSE – Saint Lawrence School</h3>
-          <p>Schooling Foundation</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section container reveal">
-      <div class="section-heading">
-        <p class="section-label">Technical Stack</p>
-        <h2>Skills</h2>
-      </div>
-
-      <div class="skills-grid">
-        <div class="skill-block tilt-card">
-          <h3>Languages</h3>
-          <div class="chip-wrap">
+          <div class="tech-orbs">
             <span>C++</span>
             <span>Java</span>
-            <span>SQL</span>
-          </div>
-        </div>
-
-        <div class="skill-block tilt-card">
-          <h3>Core CS</h3>
-          <div class="chip-wrap">
-            <span>DSA</span>
-            <span>OS</span>
-            <span>DBMS</span>
-          </div>
-        </div>
-
-        <div class="skill-block tilt-card">
-          <h3>Development</h3>
-          <div class="chip-wrap">
-            <span>MERN Stack</span>
-            <span>Spring Boot</span>
-            <span>REST APIs</span>
+            <span>MERN</span>
           </div>
         </div>
       </div>
     </section>
 
+    <section class="stats-section container reveal">
+      <div class="glass-card stat-card tilt-card">
+        <h3>80+</h3>
+        <p>LeetCode problems solved</p>
+      </div>
+      <div class="glass-card stat-card tilt-card">
+        <h3>AI</h3>
+        <p>AI-powered app development experience</p>
+      </div>
+      <div class="glass-card stat-card tilt-card">
+        <h3>7.87</h3>
+        <p>B.Tech GPA at KIIT University</p>
+      </div>
+    </section>
+
+    <section class="content-grid container">
+      <div class="glass-card about-card reveal tilt-card">
+        <div class="section-tag">About Me</div>
+        <h2>Building practical software with clean backend logic and modern full-stack systems.</h2>
+        <p>
+          I enjoy developing backend-heavy systems, full-stack products, and AI-driven
+          applications that solve real-world problems. I focus on maintainable code,
+          scalable architecture, debugging, and strong core CS foundations.
+        </p>
+      </div>
+
+      <div class="glass-card highlight-card reveal tilt-card">
+        <div class="section-tag">Highlights</div>
+        <ul class="highlight-list">
+          <li>Solved 80+ coding challenges on LeetCode</li>
+          <li>Built AI-Powered Code Review API using Spring Boot and Gemini</li>
+          <li>Hands-on with MERN Stack, Spring Boot, MySQL, MongoDB Atlas</li>
+          <li>Strong in DSA, OS, DBMS, Computer Networks</li>
+        </ul>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2026 Om Prasad Behera • Built with a dark tech aesthetic</p>
+      <p>© 2026 Om Prasad Behera • Dark tech portfolio</p>
     </div>
   </footer>
 

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Om Prasad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+  <div class="bg-blur bg-blur-1"></div>
+  <div class="bg-blur bg-blur-2"></div>
+  <div class="bg-grid"></div>
+  <div class="particles" id="particles"></div>
+
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">OM<span>.</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a class="active" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-main container">
+    <section class="page-hero reveal">
+      <p class="eyebrow">Get In Touch</p>
+      <h1><span class="gradient-text">Contact</span></h1>
+      <p class="page-subtext">
+        Open to internships, collaboration, and software development opportunities.
+      </p>
+    </section>
+
+    <section class="cards-grid two-col">
+      <a href="mailto:omprasadbehera1@gmail.com" class="contact-link-card">
+        <article class="glass-card reveal tilt-card contact-card">
+          <div class="section-tag">Email</div>
+          <h2>omprasadbehera1@gmail.com</h2>
+          <p>Best way to reach out for internships and collaboration.</p>
+        </article>
+      </a>
+
+      <article class="glass-card reveal tilt-card contact-card copy-card" id="copyPhoneCard">
+        <div class="section-tag">Phone</div>
+        <h2 id="phoneNumber">+91-8117875610</h2>
+        <p id="copyStatus">Click to copy number</p>
+      </article>
+
+      <a href="https://linkedin.com/in/omprasad7711" target="_blank" class="contact-link-card">
+        <article class="glass-card reveal tilt-card contact-card">
+          <div class="section-tag">LinkedIn</div>
+          <h2>linkedin.com/in/omprasad7711</h2>
+          <p>Connect professionally and view profile details.</p>
+        </article>
+      </a>
+
+      <a href="https://github.com/omprasad7711" target="_blank" class="contact-link-card">
+        <article class="glass-card reveal tilt-card contact-card">
+          <div class="section-tag">GitHub</div>
+          <h2>github.com/omprasad7711</h2>
+          <p>Explore repositories, code, and projects.</p>
+        </article>
+      </a>
+
+      <a href="assets/resume.pdf" target="_blank" class="contact-link-card contact-wide">
+        <article class="glass-card reveal tilt-card contact-card">
+          <div class="section-tag">Resume</div>
+          <h2>Open Resume PDF</h2>
+          <p>Click anywhere on this card to view the resume.</p>
+        </article>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Om Prasad Behera • Contact</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

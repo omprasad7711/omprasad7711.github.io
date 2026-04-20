@@ -13,34 +13,7 @@ if (menuToggle && navLinks) {
   });
 }
 
-// Active nav link on click
-document.querySelectorAll(".nav-links a").forEach((link) => {
-  link.addEventListener("click", function () {
-    document
-      .querySelectorAll(".nav-links a")
-      .forEach((item) => item.classList.remove("active"));
-    this.classList.add("active");
-  });
-});
-
-// Smooth scroll for section links
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-  link.addEventListener("click", function (e) {
-    const targetId = this.getAttribute("href");
-    const target = document.querySelector(targetId);
-
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  });
-});
-
-// Reveal on scroll
-const revealElements = document.querySelectorAll(".reveal");
+const reveals = document.querySelectorAll(".reveal");
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
@@ -50,88 +23,109 @@ const revealObserver = new IntersectionObserver(
       }
     });
   },
-  {
-    threshold: 0.15,
-  }
+  { threshold: 0.12 }
 );
 
-revealElements.forEach((el) => revealObserver.observe(el));
+reveals.forEach((item) => revealObserver.observe(item));
 
-// Cursor effect
 const cursorDot = document.querySelector(".cursor-dot");
-const cursorOutline = document.querySelector(".cursor-outline");
+const cursorRing = document.querySelector(".cursor-ring");
 
 window.addEventListener("mousemove", (e) => {
-  if (!cursorDot || !cursorOutline) return;
+  if (!cursorDot || !cursorRing) return;
 
   cursorDot.style.left = `${e.clientX}px`;
   cursorDot.style.top = `${e.clientY}px`;
 
-  cursorOutline.style.left = `${e.clientX}px`;
-  cursorOutline.style.top = `${e.clientY}px`;
+  cursorRing.style.left = `${e.clientX}px`;
+  cursorRing.style.top = `${e.clientY}px`;
 });
 
-// Cursor interaction
-document.querySelectorAll("a, button, .tilt-card, .btn").forEach((el) => {
+document.querySelectorAll("a, button, .copy-card, .skill-chip").forEach((el) => {
   el.addEventListener("mouseenter", () => {
-    if (!cursorOutline) return;
-    cursorOutline.style.width = "58px";
-    cursorOutline.style.height = "58px";
-    cursorOutline.style.borderColor = "rgba(0, 245, 212, 0.9)";
+    if (!cursorRing) return;
+    cursorRing.style.width = "56px";
+    cursorRing.style.height = "56px";
+    cursorRing.style.borderColor = "rgba(0, 245, 212, 0.9)";
   });
 
   el.addEventListener("mouseleave", () => {
-    if (!cursorOutline) return;
-    cursorOutline.style.width = "34px";
-    cursorOutline.style.height = "34px";
-    cursorOutline.style.borderColor = "rgba(76, 201, 240, 1)";
+    if (!cursorRing) return;
+    cursorRing.style.width = "34px";
+    cursorRing.style.height = "34px";
+    cursorRing.style.borderColor = "rgba(76, 201, 240, 0.85)";
   });
 });
 
-// 3D tilt effect
 const tiltCards = document.querySelectorAll(".tilt-card");
 
 tiltCards.forEach((card) => {
   card.addEventListener("mousemove", (e) => {
     const rect = card.getBoundingClientRect();
-
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = ((y - centerY) / centerY) * -6;
-    const rotateY = ((x - centerX) / centerX) * 6;
+    const rotateX = ((y - centerY) / centerY) * -7;
+    const rotateY = ((x - centerX) / centerX) * 7;
 
     card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
   });
 
   card.addEventListener("mouseleave", () => {
-    card.style.transform =
-      "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)";
+    card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)";
   });
 });
 
-// Highlight active nav link while scrolling
-const sections = document.querySelectorAll("section[id]");
+document.querySelectorAll(".magnetic").forEach((button) => {
+  button.addEventListener("mousemove", (e) => {
+    const rect = button.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
 
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 140;
-    const sectionHeight = section.offsetHeight;
-
-    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-      current = section.getAttribute("id");
-    }
+    button.style.transform = `translate(${x * 0.12}px, ${y * 0.12}px)`;
   });
 
-  document.querySelectorAll(".nav-links a").forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("active");
-    }
+  button.addEventListener("mouseleave", () => {
+    button.style.transform = "translate(0, 0)";
   });
 });
+
+const particlesContainer = document.getElementById("particles");
+
+if (particlesContainer) {
+  for (let i = 0; i < 28; i++) {
+    const particle = document.createElement("span");
+    particle.classList.add("particle");
+
+    const size = Math.random() * 4 + 2;
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
+    particle.style.animationDelay = `${Math.random() * 8}s`;
+
+    particlesContainer.appendChild(particle);
+  }
+}
+
+const copyPhoneCard = document.getElementById("copyPhoneCard");
+const phoneNumber = document.getElementById("phoneNumber");
+const copyStatus = document.getElementById("copyStatus");
+
+if (copyPhoneCard && phoneNumber && copyStatus) {
+  copyPhoneCard.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(phoneNumber.textContent.trim());
+      copyStatus.textContent = "Phone number copied!";
+    } catch (error) {
+      copyStatus.textContent = "Could not copy number";
+    }
+
+    setTimeout(() => {
+      copyStatus.textContent = "Click to copy number";
+    }, 1800);
+  });
+}

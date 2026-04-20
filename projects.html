@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Om Prasad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+  <div class="bg-blur bg-blur-1"></div>
+  <div class="bg-blur bg-blur-2"></div>
+  <div class="bg-grid"></div>
+  <div class="particles" id="particles"></div>
+
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">OM<span>.</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="projects.html">Projects</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="page-main container">
+    <section class="page-hero reveal">
+      <p class="eyebrow">Portfolio Work</p>
+      <h1><span class="gradient-text">Projects</span></h1>
+      <p class="page-subtext">
+        AI, backend, and full-stack projects built with practical use cases and scalable structure.
+      </p>
+    </section>
+
+    <section class="cards-grid projects-grid">
+      <article class="glass-card project-card reveal tilt-card">
+        <div class="project-top">
+          <span class="project-number">01</span>
+          <span class="project-chip">AI + Backend</span>
+        </div>
+        <h2>AI-Powered Code Review API</h2>
+        <p class="project-stack">Spring Boot • REST API • Gemini API • Postman</p>
+        <p>
+          Developed a Spring Boot REST API that analyzes user-submitted code and
+          generates AI-based improvement suggestions using Google Gemini API.
+          Designed a scalable Controller–Service–Model backend and tested endpoints with Postman.
+        </p>
+      </article>
+
+      <article class="glass-card project-card reveal tilt-card">
+        <div class="project-top">
+          <span class="project-number">02</span>
+          <span class="project-chip">Full Stack</span>
+        </div>
+        <h2>MERN Money Tracker App</h2>
+        <p class="project-stack">MongoDB • Express • React • Node.js</p>
+        <p>
+          Built a full-stack expense tracker to record and visualize income and expenses
+          with authentication, validation, and MongoDB Atlas storage.
+        </p>
+      </article>
+
+      <article class="glass-card project-card reveal tilt-card">
+        <div class="project-top">
+          <span class="project-number">03</span>
+          <span class="project-chip">Productivity App</span>
+        </div>
+        <h2>Task Management App</h2>
+        <p class="project-stack">Java • Spring Boot • React • MySQL • JWT</p>
+        <p>
+          Developed a full-stack task manager with login system, JWT authentication,
+          and CRUD functionality for efficient task handling.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Om Prasad Behera • Projects</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
