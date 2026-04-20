@@ -31,29 +31,31 @@ reveals.forEach((item) => revealObserver.observe(item));
 const cursorDot = document.querySelector(".cursor-dot");
 const cursorRing = document.querySelector(".cursor-ring");
 
-window.addEventListener("mousemove", (e) => {
-  if (!cursorDot || !cursorRing) return;
+if (window.innerWidth > 980) {
+  window.addEventListener("mousemove", (e) => {
+    if (!cursorDot || !cursorRing) return;
 
-  cursorDot.style.left = `${e.clientX}px`;
-  cursorDot.style.top = `${e.clientY}px`;
+    cursorDot.style.left = e.clientX + "px";
+    cursorDot.style.top = e.clientY + "px";
 
-  cursorRing.style.left = `${e.clientX}px`;
-  cursorRing.style.top = `${e.clientY}px`;
-});
+    cursorRing.style.left = e.clientX + "px";
+    cursorRing.style.top = e.clientY + "px";
+  });
+}
 
 document.querySelectorAll("a, button, .copy-card, .skill-chip").forEach((el) => {
   el.addEventListener("mouseenter", () => {
     if (!cursorRing) return;
-    cursorRing.style.width = "56px";
-    cursorRing.style.height = "56px";
-    cursorRing.style.borderColor = "rgba(0, 245, 212, 0.9)";
+    cursorRing.style.width = "55px";
+    cursorRing.style.height = "55px";
+    cursorRing.style.borderColor = "#00f5d4";
   });
 
   el.addEventListener("mouseleave", () => {
     if (!cursorRing) return;
     cursorRing.style.width = "34px";
     cursorRing.style.height = "34px";
-    cursorRing.style.borderColor = "rgba(76, 201, 240, 0.85)";
+    cursorRing.style.borderColor = "rgba(76, 201, 240, 0.8)";
   });
 });
 
@@ -96,6 +98,8 @@ document.querySelectorAll(".magnetic").forEach((button) => {
 const particlesContainer = document.getElementById("particles");
 
 if (particlesContainer) {
+  particlesContainer.innerHTML = "";
+
   for (let i = 0; i < 28; i++) {
     const particle = document.createElement("span");
     particle.classList.add("particle");
