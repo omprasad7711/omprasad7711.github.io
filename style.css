@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI';
+}
+
+body {
+    color: white;
+    overflow-x: hidden;
+    background: linear-gradient(-45deg, #000000, #0f0f2a, #1a0033, #000428);
+    background-size: 400% 400%;
+    animation: bg 10s ease infinite;
+}
+
+@keyframes bg {
+    0% {background-position: 0%}
+    50% {background-position: 100%}
+    100% {background-position: 0%}
+}
+
+/* PARTICLES */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+/* CURSOR GLOW */
+.cursor-glow {
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, violet, transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(15px);
+    background: rgba(0,0,0,0.3);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav a {
+    color: violet;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: cyan;
+}
+
+/* SECTIONS */
+section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+h2 span {
+    color: violet;
+}
+
+/* LINKS */
+.links a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, violet, navy);
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 0 15px violet;
+    transition: 0.3s;
+}
+
+.links a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px cyan;
+}
+
+/* CARDS */
+.card {
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.05);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 30px violet;
+}
+
+/* SCROLL ANIMATION */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1s;
+}
